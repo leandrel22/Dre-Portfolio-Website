@@ -1,0 +1,316 @@
+/*
+Colors used
+
+Text Color (Dark Gray): #2b2b2b;
+Primary Color (Light Pink): #f07edc;
+Secondary Color (Blue): #1d1ce5;
+ */
+
+/* body {
+    background-color: lightpink;
+} */
+
+
+/* This section is for stylings that apply to the entire page*/
+
+:root {
+    --primary-color: #357b70;
+    --secondary-color: #e0b354;
+    --dark-grey: #2b2b2b;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+body {
+    font-family: 'lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    /* sets the font size to 16px */
+    line-height: 1.5;
+}
+
+/*This applies to the full body section of the website. Sets the font, font size, line height, etc */
+
+h1 {
+    font-size: 30px;
+    /* font size for header 1*/
+    font-weight: 1000;
+    color: #2b2b2b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* this section is for the header of the page */
+
+.page_logo {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.page-header {
+    display: flex;
+    width: 100%;
+    /*tis is saying the page header will take up the full width of the page*/
+    padding: 20px;
+    /*this is giving the header 20px padding on all sides*/
+    border-bottom: 2px solid lightgray;
+}
+
+.page-header_item {
+    flex: 0 1 150px;
+}
+
+.page-header_item:last-child {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.navigation-list {
+    list-style-type: none;
+}
+
+/*This styling removes the bullet points or numbering from a list*/
+
+.navigation-list li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.contact_page {
+    min-width: 300px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+a {
+    color: #1d1ce5;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+a:active {
+    color: #f07edc
+}
+
+button {
+    border: none;
+    font-family: inherit;
+    background-color: #1d1ce5;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+button:hover,
+button:focus {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+
+
+.new_button {
+    background-color: #f07edc;
+    color: white;
+}
+
+.navigation-list_item_active {
+    text-decoration: none;
+}
+
+.profile {
+    min-width: 300px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.profile_portrait {
+    width: 250px;
+    float: left;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+
+/* Everthing before the profile_portrait element stayed the same. THe profile_portrait then got aligned to the left. And everything after it gets aligned to the right of the image. including the footer */
+
+.page_footer {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    /*by default, display: flex will align everything horizontally (in a row). Flex-direction: column will put things vertically (in a collumn)*/
+    text-align: center;
+    /* in order to reverse the order, you can use flex-direction: row-reverse or column reverse */
+
+}
+
+.flex-container {
+    display: flex;
+    background-color: aliceblue;
+}
+
+.flex-item {
+    background-color: aqua;
+    text-align: center;
+    height: 75px;
+    margin: 10px;
+    flex-basis: 200px;
+    flex-grow: 1;
+}
+
+.flex-item:nth-child(3) {
+    flex-grow: 2;
+}
+
+/* .page_footer:nth-child(2) {
+    flex-grow: 2;
+} */
+
+/* in order to ensure that the footer was not affected by the float, clear cleared all floats to the right and left of the page_footer element*/
+
+/* work Screen CSS for grid starts here */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* we can user px, percentage, or fr. 1fr, 2fr, etc. fr makes it flexible and dynamic as the browser size changes */
+    /* grid-template-rows: 300px 300px; we dont actually need this since we set the columns property already */
+    grid-gap: 20px;
+}
+
+.grid__item {
+    background-color: lightgray;
+}
+
+.grid__item:last-child {
+    grid-column: auto;
+    grid-row: auto;
+}
+
+
+
+/* @media section */
+
+@media all and (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media all and (max-width: 750px) {
+    .grid {
+        grid-gap: 10px;
+    }
+
+    .grid__item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+
+/* this is the transitions section*/
+
+.button,
+button {
+    border: none;
+    display: inline-block;
+    font-family: inherit;
+    background-color: #1d1ce5;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    transition: opacity 0.2s;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.about_dre {
+    min-width: 300px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.my_interests {
+    text-align: center;
+    list-style: none;
+    /* this is not well aligned with the page. How to fix?*/
+}
+
+@keyframes color-change {
+    0% {
+        fill: #edc655;
+    }
+
+    50% {
+        fill: #fcffad;
+    }
+
+    100% {
+        fill: #f76414;
+    }
+}
+
+.sun {
+    animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move {
+    from {
+        transform: translate(0, 50px);
+    }
+
+    to {
+        transform: translate(200px, 50px);
+    }
+}
+
+.cloud-front {
+    animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+    from {
+        transform: translate(446px, 48px);
+    }
+
+    to {
+        transform: translate(100px, 48px);
+    }
+}
+
+.cloud-back {
+    animation: 34s cloud-move-reverse infinite alternate linear;
+}

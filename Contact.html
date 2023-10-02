@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dre's Contact</title>
+    <link rel="icon" href="./img/Favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&family=Lato:wght@400;700&display=swap" rel="stylesheet">-->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <header class="page-header">
+        <!-- <h1>Hello World</h1> -->
+        <img src="img/tabyt logo.jpg" alt="logo" class="page_logo page-header_item">
+        <nav class="main_navigation page-header_item">
+            <ul role="menubar" class="navigation-list">
+                <!-- tells screen readers that this is a menu bar-->
+                <li role="presentation"> <!-- prevents screen readers from reading this aloud?-->
+                    <a href="index.html" role="menuitem" class="navigation-list_item">Home</a>
+                </li>
+                <li role="presentation">
+                    <a href="about.html" role="menuitem" class="navigation-list_item">About
+                        Me</a>
+                </li>
+                <li role="presentaiton">
+                    <a href="Contact.html" role="menuitem"
+                        class="navigation-list_item navigation-list_item_active">Contact</a>
+                </li>
+                <li role="presentaiton">
+                    <a href="work.html" role="menuitem" class="navigation-list_item">Work</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="contact_page">
+        <div>
+            <h2> Contact Form</h2>
+            <form action="" method="post" id="contact-form">
+                <!-- we gave this form the id "contact-form" as a label to reference it later. for each label in the form, we gave them a class of "standard-label" in order to group them together and reference later-->
+                <div>
+                    <label class="standard-label" for="contact-email">Email: </label>
+                    <!-- this is the label for the form. we added class="standard-label to group it with other labels. adding the "for" is an extra level of tagging and helps screen readers-->
+                    <input type="email" id="contact-email" required>
+                    <!-- this is the actual text field. Required makes it a mandatory field-->
+                </div>
+                <div>
+                    <label class="standard-label" for="contact-number">Phone: </label>
+                    <input type="tel" id="contact-number" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+                </div>
+                <div>
+                    <label class="standard-label" for="user-message">Message: </label>
+                    <textarea maxlength="200" id="user-message" required> </textarea>
+                    <!-- this creates a textfield. Maxlenth limits the number of characters to the number entered-->
+                </div>
+                <div>
+                    <input type="submit" value="Send Message"> <!-- this creates a button that says Send Message-->
+                </div>
+            </form>
+        </div>
+        <!-- 
+            <div>
+                <ul>
+                    <li data-engine-type="electric">Tesla</li>
+                    <li data-engine-type="hybrid">BMW i8</li>
+                    <li data-engine-type="gas">VW Passat</li>
+                    <li data-engine-type="gas">Audi A4</li>
+                </ul>
+            </div>
+        -->
+        <div>
+            <h2>Contact Me</h2>
+            <a href="mailto:leandre@gmail.com">Email Me</a><br>
+            <a href="mailto:leandre@gmail.com">Leandre.ligan@gmail.com</a><br>
+            <a href="tel:+1 646 963 1771">+1 646-963-1771</a><br>
+        </div>
+    </main>
+    <footer class="page_footer">
+        <p>Find me on</p>
+        <div class="social_media">
+            <img src="img/github logo.svg" alt="Github">
+            <img src="img/Twitter Logo.svg" alt="twitter">
+            <img src="img/Linkedin logo.svg" alt="Linkedin">
+        </div>
+    </footer>
+    <script src="js/tota11y.min.js"></script>
+</body>
+
+</html>
